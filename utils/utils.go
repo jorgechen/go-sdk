@@ -2,6 +2,7 @@ package utils
 
 import (
 	"fmt"
+	"github.com/kr/pretty"
 	"strings"
 )
 
@@ -18,3 +19,6 @@ func JoinErrors(errors []error) error {
 	return nil
 }
 
+func PrettyString(value interface{}) string {
+	return fmt.Sprintf("%# v", pretty.Formatter(value))
+}
